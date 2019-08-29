@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/single_story_layout_id"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="5dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:maxLines="2"
+                android:height="44dp"
+                android:id="@+id/single_story_title_id"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:paddingLeft="5dp"
+                android:textStyle="bold"
+                android:text="Story 4"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimaryDark"
+                android:layout_height="150dp">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/single_story_icon_id"/>
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/ic_audio_background"
+                    android:src="@drawable/ic_icon_audio"
+                    android:layout_margin="10dp"
+                    android:visibility="gone"/>
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/single_story_btn_play_id"
+                    android:src="@android:drawable/ic_media_play"
+                    android:background="@drawable/single_story_play_button"
+                    android:layout_centerInParent="true"/>
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/single_story_btn_progress_bar_id"
+                    android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/single_story_release_date_id"
+                android:textAppearance="?android:textAppearanceSmall"
+                android:text="Released on: Oct 2, 2017"
+                android:textStyle="normal"
+                android:paddingLeft="10dp"
+                android:layout_marginTop="2dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/single_story_views_id"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_alignParentLeft="true"
+                    android:textAlignment="center"
+                    android:drawableTop="@drawable/ic_ear_inactive"
+                    android:textStyle="normal"
+                    android:text="130"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/single_story_likes_id"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_centerInParent="true"
+                    android:textAlignment="center"
+                    android:text="47"
+                    android:textStyle="normal"
+                    android:drawableTop="@drawable/ic_thumb_up_dislike" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/single_story_payment_status_id"
+                    android:textAppearance="?android:textAppearanceSmall"
+                    android:layout_alignParentRight="true"
+                    android:textColor="@color/red"
+                    android:textStyle="bold"
+                    android:text="Non Free"/>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

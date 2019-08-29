@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.watotoappgmail.watotoapp2.MediaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="false"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/media_up_next_message"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textStyle="bold"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/media_player_recycler_view_id"
+            android:padding="2dp"
+            android:background="@color/transparent_primary">
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+    <ProgressBar
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/media_progress_bar_height"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/media_progress_bar_id"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/media_exo_player_id"
+            app:hide_on_touch="false"
+            app:surface_type="none"
+            android:background="@color/colorPrimary"
+            android:visibility="visible"
+            app:show_timeout="@integer/google_play_services_version">
+        </com.google.android.exoplayer2.ui.SimpleExoPlayerView>
+
+    </RelativeLayout>
+</RelativeLayout>

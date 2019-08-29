@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:background="@color/white"
+    tools:context="com.watotoappgmail.watotoapp2.BundleActivity">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_primary">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kifurushi"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bundle_fields_background">
+            <Spinner
+                android:id="@+id/bundle_type_spinner_id"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/bundle_fields_height" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/bundle_fields_margin"
+            android:text="Price"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bundle_fields_height"
+            android:id="@+id/bundle_price_text_view_id"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="end"
+            android:background="@drawable/bundle_fields_background"
+            android:padding="@dimen/bundle_fields_margin"
+            android:text="0.0/=" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="My Account Balance"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/bundle_fields_height"
+            android:id="@+id/bundle_user_account_balcnce_text_view_id"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:gravity="end"
+            android:textStyle="bold"
+            android:padding="@dimen/bundle_fields_margin"
+            android:text="0.0/="
+            android:layout_marginTop="@dimen/bundle_fields_margin"/>
+        <Button
+            android:layout_marginTop="@dimen/bundle_fields_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/bundle_fields_height"
+            android:layout_gravity="center"
+            android:id="@+id/bundle_buy_btn_id"
+            android:background="@color/colorPrimary"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:text="Subscribe" />
+    </LinearLayout>
+</ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "774184659798",
+    "firebase_url": "https://watotoapp-54b71.firebaseio.com",
+    "project_id": "watotoapp-54b71",
+    "storage_bucket": "watotoapp-54b71.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:774184659798:android:79940a18f6c58225",
+        "android_client_info": {
+          "package_name": "com.watotoappgmail.watotoapp2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "774184659798-kv0ijg152mvpp51q15do26sfq3ilv72j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDwllSsBQO-GiylIDZrurDym_JK3EPuxe0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

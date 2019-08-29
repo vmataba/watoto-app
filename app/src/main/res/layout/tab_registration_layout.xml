@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="15dp"
+    android:background="@color/white"
+    tools:context="com.watotoappgmail.watotoapp2.RegistrationActivity">
+
+  <ScrollView
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      tools:layout_editor_absoluteY="8dp"
+      tools:layout_editor_absoluteX="8dp"
+      android:background="@color/transparent_primary"
+      android:fillViewport="true">
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           tools:layout_editor_absoluteY="0dp"
+           android:padding="2dp"
+           tools:layout_editor_absoluteX="8dp">
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textAppearance="?android:textAppearanceMedium"
+               android:textStyle="bold"
+               android:text="Parent Details"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Name"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+               <EditText
+                   android:layout_width="match_parent"
+                   android:layout_height="@dimen/reg_edit_text_height"
+                   android:hint="Enter your name"
+                   android:background="@color/white"
+                   android:inputType="text"
+                   android:id="@+id/reg_user_name_id"/>
+           </android.support.v7.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Phone number"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/reg_edit_text_height"
+               android:inputType="phone"
+               android:background="@color/white"
+               android:hint="Enter your Phone number"
+               android:id="@+id/reg_phone_number_id"/>
+           </android.support.v7.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Email address"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+           <EditText
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/reg_edit_text_height"
+               android:background="@color/white"
+               android:inputType="textEmailAddress"
+               android:hint="Enter your Email address (Optional)"
+               android:id="@+id/reg_email_address_id"/>
+           </android.support.v7.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Country"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+           <Spinner
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/reg_edit_text_height"
+               android:inputType="phone"
+               android:background="@color/white"
+               android:hint="Phone number"
+               android:id="@+id/reg_country_id"/>
+           </android.support.v7.widget.CardView>
+           <!--Child Details-->
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textAppearance="?android:textAppearanceMedium"
+               android:textStyle="bold"
+               android:text="Child Details"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Age (Years)"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:orientation="vertical">
+                   <Spinner
+                       android:layout_width="match_parent"
+                       android:layout_height="@dimen/reg_edit_text_height"
+                       android:inputType="date"
+                       android:background="@drawable/bundle_fields_background"
+                       android:hint="Birth date"
+                       android:id="@+id/reg_child_age_id"
+                       android:editable="false"
+                       android:textColor="@color/black"
+                       android:textAppearance="?android:textAppearanceMedium"
+                       android:visibility="visible"/>
+                   <!--DatePicker
+                       android:id="@+id/reg_child_birth_date_picker_id"
+                       android:layout_width="match_parent"
+                       android:layout_height="150dp"
+                       android:datePickerMode="spinner"
+                       android:calendarViewShown="false"
+                       android:headerBackground="@color/colorPrimary"
+                       android:startYear="2004"
+                       android:endYear="2013">
+                   </DatePicker-->
+                   <!--ImageButton
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                      android:src="@drawable/ic_done_all"
+                       android:layout_gravity="left"
+                       android:id="@+id/reg_date_set_id" /-->
+               </LinearLayout>
+
+           </android.support.v7.widget.CardView>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Gender"/>
+           <android.support.v7.widget.CardView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:elevation="@dimen/reg_card_elevation">
+           <RadioGroup
+               android:layout_width="match_parent"
+               android:layout_height="@dimen/reg_edit_text_height"
+               android:background="@color/white"
+               android:id="@+id/reg_child_sex_id">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+                   <TextView
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:id="@+id/reg_sex_selection_error_text_view"/>
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:id="@+id/reg_child_sex">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/reg_child_sex_male_id"
+                        android:layout_alignParentLeft="true"
+                        android:text="Male"/>
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/reg_child_sex_female_id"
+                        android:layout_alignParentRight="true"
+                        android:text="Female"/>
+                </RadioGroup>
+               </RelativeLayout>
+           </RadioGroup>
+           </android.support.v7.widget.CardView>
+
+           <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="New password"/>
+               <android.support.v7.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:elevation="@dimen/reg_card_elevation">
+
+               <EditText
+                   android:id="@+id/reg_user_password_id"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:hint="@string/prompt_password"
+                   android:imeActionId="@+id/login"
+                   android:background="@color/white"
+                   android:imeOptions="actionUnspecified"
+                   android:inputType="textPassword"
+                   android:maxLines="1"
+                   android:singleLine="true" />
+               </android.support.v7.widget.CardView>
+
+           </android.support.design.widget.TextInputLayout>
+
+           <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+
+               <TextView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="Confirm password"/>
+               <android.support.v7.widget.CardView
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:elevation="@dimen/reg_card_elevation">
+
+               <EditText
+                   android:id="@+id/reg_user_password_confirm_id"
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:hint="@string/prompt_password_confirm"
+                   android:background="@color/white"
+                   android:imeActionId="@+id/login"
+                   android:imeOptions="actionUnspecified"
+                   android:inputType="textPassword"
+                   android:maxLines="1"
+                   android:singleLine="true"
+                   tools:ignore="InvalidImeActionId" />
+               </android.support.v7.widget.CardView>
+
+           </android.support.design.widget.TextInputLayout>
+
+               <Button
+                   android:layout_width="match_parent"
+                   android:layout_height="50dp"
+                   android:text="Register"
+                   android:textAllCaps="false"
+                   android:background="@color/colorPrimary"
+                   android:textColor="@color/white"
+                   android:textStyle="bold"
+                   android:id="@+id/reg_btn_id"/>
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textColor="@color/white"
+               android:text="@string/or_register_message"
+               android:textStyle="bold"
+               android:textAppearance="?android:textAppearanceSmall"
+               android:gravity="center"
+               android:layout_marginTop="@dimen/login_reg_extra_fields_margin_top"/>
+
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:textColor="@color/white"
+               android:text="@string/action_sign_in"
+               android:textStyle="bold"
+               android:textAppearance="?android:textAppearanceMedium"
+               android:gravity="center"
+               android:id="@+id/welcome_tab_login_text_view_id"
+               android:layout_marginTop="@dimen/login_reg_extra_fields_margin_top"/>
+           <!--Will not be used-->
+           <TextView
+               android:layout_width="match_parent"
+               android:layout_height="70dp"
+               android:textAllCaps="false" />
+           <!--Will not be used-->
+       </LinearLayout>
+
+   </ScrollView>
+</android.support.constraint.ConstraintLayout>

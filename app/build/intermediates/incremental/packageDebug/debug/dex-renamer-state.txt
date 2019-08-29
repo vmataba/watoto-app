@@ -1,0 +1,4 @@
+#Mon Jan 15 04:49:17 EAT 2018
+base.0=D\:\\Android Projects\\WatotoApp2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+renamed.0=classes.dex
+file.0=D\:\\Android Projects\\WatotoApp2\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\0\\classes.dex

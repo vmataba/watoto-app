@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WatotoApp</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="home_title">Stories</string>
+    <string name="search_hint">Type story name</string>
+    <string name="title_activity_welcome">Welcome to WatotoApp</string>
+    <string name="title_activity_login">Sign in</string>
+
+
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Enter Password</string>
+    <string name="prompt_password_confirm">Repeat password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="media_up_next_message">Up next ... </string>
+    <string name="or_register_message">Or</string>
+    <string name="create_account_message">Create an Account</string>
+    <string name="login_prompt_message">Enter your phone number and Password</string>
+    <string name="reg_field_required_message">This field cannot be blank</string>
+    <string name="reg_passwords_mismatch_message">Passwords do not match</string>
+    <string name="incorrect_user_name_message">Username is incorrect</string>
+    <string name="incorrect_password_message">Password is incorrect</string>
+    <string name="bundle_toolbar_message">Subscription</string>
+
+    <string name="contact_us_message">
+        Kama una lolote kuhusu WatotoApp,  waweza kuwasiliana nasi kupitia:
+        \n
+        Namba ya Simu: 0652605256
+        \n
+        Email: info@watotoapp.com
+        \n
+        Website: www.watotoapp.com
+        \n
+        Facebook Page: WatotoApp
+    </string>
+
+</resources>

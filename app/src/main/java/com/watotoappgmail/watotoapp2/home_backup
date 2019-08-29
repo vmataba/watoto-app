@@ -1,0 +1,276 @@
+package com.watotoappgmail.watotoapp2;
+
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Configuration;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.MenuInflater;
+import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
+import android.support.v7.widget.SearchView;
+
+import java.util.ArrayList;
+
+import home.AllStories;
+import home.PopularStories;
+import story.Story;
+import story.StoryAdapter;
+import story.StoryItemAdapter;
+import welcome.Login;
+import welcome.Registration;
+
+public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+
+    private RecyclerView storyRecycler;
+    private StoryItemAdapter storyAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+    private static final int NUM_COL_FOR_TABLET = 2;
+    private static final int NUM_COL_FOR_PHONE = 1;
+    private ArrayList<Story> story_list;
+
+    private HomeActivity.SectionsPagerAdapter mSectionsPagerAdapter;
+    private ViewPager mViewPager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(R.string.home_title);
+        setSupportActionBar(toolbar);
+
+        mSectionsPagerAdapter = new HomeActivity.SectionsPagerAdapter(getSupportFragmentManager());
+
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.container);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
+
+
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.home_tabs_id);
+        tabLayout.setupWithViewPager(mViewPager);
+
+
+        // Get the intent, verify the action and get the query
+        Intent intent = getIntent();
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            //doMySearch(query);
+        }
+
+
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        /*View header = navigationView.getHeaderView(0);
+        Button btn = (Button) header.findViewById(R.id.user_account_subscription_id);
+        btn.setText("SUBSCRIBED");
+        btn.setBackgroundColor(getResources().getColor(R.color.green));*/
+
+        /*Begin Testing */
+
+
+
+        layoutManager = new GridLayoutManager(this,2);
+        layoutManager = isTablet(this)? new GridLayoutManager(this,HomeActivity.NUM_COL_FOR_TABLET):
+                new GridLayoutManager(this,HomeActivity.NUM_COL_FOR_PHONE);
+//        storyRecycler.setLayoutManager(layoutManager);
+
+        Story story1 = new Story("Story 1","Oct 3, 2017",207,20,Story.PAYMENT_NON_FREE);
+        Story story2 = new Story("Story 2","Oct 3, 2017",207,20,Story.PAYMENT_NON_FREE);
+        Story story3 = new Story("Story 3","Oct 3, 2017",100,25,Story.PAYMENT_FREE);
+        Story story4 = new Story("Story 4","Oct 5, 2017",200,34,Story.PAYMENT_NON_FREE);
+        Story story5 = new Story("Story 5","Oct 4, 2017",301,62,Story.PAYMENT_FREE);
+        Story story6 = new Story("Story 6","Oct 4, 2017",220,34,Story.PAYMENT_FREE);
+        Story story7 = new Story("Story 7","Oct 5, 2017",405,34,Story.PAYMENT_NON_FREE);
+        Story story8 = new Story("Story 8","Oct 4, 2017",204,56,Story.PAYMENT_NON_FREE);
+        Story story9 = new Story("Story 9","Desc 4, 2017",20,189,Story.PAYMENT_NON_FREE);
+
+        story_list = new ArrayList<Story>();
+        story_list.add(story1);
+        story_list.add(story2);
+        story_list.add(story3);
+        story_list.add(story4);
+        story_list.add(story5);
+        story_list.add(story6);
+        story_list.add(story7);
+        story_list.add(story8);
+        story_list.add(story9);
+
+        storyAdapter = new StoryItemAdapter(story_list,this);
+//        storyRecycler.setAdapter(storyAdapter);
+         /*End Testing */
+
+
+    }
+
+
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.home, menu);
+
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search_id).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                ArrayList<Story> new_story_list = new ArrayList<Story>();
+                newText = newText.toLowerCase();
+                for (Story story: story_list) {
+                    if (story.getTitle().toLowerCase().contains(newText)) {
+                        new_story_list.add(story);
+                    }
+                }
+                storyAdapter.setFilter(new_story_list);
+                return true;
+            }
+        });
+
+        return true;
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        if (id == R.id.menu_search_id){
+            Toast.makeText(this,"Hello out there",Toast.LENGTH_SHORT).show();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+    public static boolean isTablet(Context context) {
+        return (context.getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
+
+
+
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            switch (position) {
+                case 0:
+                    AllStories stories = new AllStories(HomeActivity.this);
+                    return stories;
+                case 1:
+                    PopularStories popularStories = new PopularStories(HomeActivity.this);
+                    return popularStories;
+            }
+            return null;
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            switch (position) {
+                case 0:
+                    return "POPULAR";
+                case 1:
+                    return "ALL";
+            }
+            return null;
+        }
+    }
+
+
+}

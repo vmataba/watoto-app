@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home_nav_subscribe"
+            android:icon="@drawable/ic_subscribe"
+            android:title="Subscribe" />
+        <item
+            android:id="@+id/home_nav_recharge"
+            android:icon="@drawable/ic_attach_money"
+            android:title="Recharge" />
+        <!--item
+            android:id="@+id/home_nav_add_child"
+            android:icon="@drawable/ic_child"
+            android:title="Add Child" /-->
+    </group>
+
+    <item android:title="Communication">
+        <menu>
+            <!--item
+                android:id="@+id/home_nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share application" /-->
+            <!--item
+                android:id="@+id/home_nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send Feedback" /-->
+            <item
+                android:id="@+id/home_nav_contact"
+                android:icon="@drawable/ic_contact_us"
+                android:title="Contact Us" />
+        </menu>
+    </item>
+    <item android:title="Other">
+        <menu>
+            <item
+            android:id="@+id/home_nav_about"
+            android:icon="@drawable/ic_about"
+            android:title="About" />
+            <item
+                android:id="@+id/home_nav_faq"
+                android:icon="@drawable/ic_faq"
+                android:title="FAQ" />
+        </menu>
+    </item>
+
+</menu>
